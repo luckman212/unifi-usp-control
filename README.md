@@ -31,9 +31,8 @@ options:
 - `HOST` the hostname and port of your Unifi controller e.g. `unifi.foo.com:8443`
 - `USER` a user to authenticate with for API calls (typically `admin`)
 - `PASS` password (yes I know it's not a good idea to store passwords in the clear! Please fork the script and improve the security by using environment vars, password managers, cryptography or whatever other method you see fit!)
-- `DEFAULT_MAC` = 'aa:bb:cc:dd:ee:ff'
+- `DEFAULT_MAC` = MAC address of the default plug you want to control
 - `DEFAULT_SITE` = The site ID where your USP-Plug resides (you will see this if you navigate to your Unifi controller, it is the part after the `/manage/` in the URL)
-```
 
 ### Can this program do _xyz_ ?
 
