@@ -26,11 +26,16 @@ options:
   --mac, -m MAC        MAC address of USP-Plug
 ```
 
-### List of program variables
+### List of Environment Variables
 
-- `HOST` the hostname and port of your Unifi controller e.g. `unifi.foo.com:8443`
-- `USER` a user to authenticate with for API calls (typically `admin`)
-- `PASS` password (_yes_ I know it's not a good idea to store passwords in the clear! Please fork the script and improve the security by using environment vars, password managers, cryptography or whatever other method you see fit!)
+- `UNIFI_HOST` the hostname and port of your Unifi controller e.g. `unifi.foo.com:8443`
+- `UNIFI_USER` a user to authenticate with for API calls (typically `admin`)
+- `UNIFI_PASS` password (_yes_ I know it's not a good idea to store passwords in the clear! Please fork the script and improve the security by using a password manager, cryptography or whatever other method you see fit!)
+
+### Other Variables (hardcoded)
+
+These can be overridden using arguments `--mac/-m` or `--site/-s`.
+
 - `DEFAULT_MAC` = MAC address of the default plug you want to control
 - `DEFAULT_SITE` = The site ID where your USP-Plug resides (you will see this if you navigate to your Unifi controller, it is the part after the `/manage/` in the URL)
 

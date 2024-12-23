@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 
-import requests
+import os
 import sys
+import requests
 import argparse
 
-HOST = 'unifi-controller-url:8443'
-USER = 'admin'
-PASS = 'hunter2'
-DEFAULT_MAC = 'aa:bb:cc:dd:ee:ff'
+DEFAULT_HOST = 'unifi-controller-url:8443'
+DEFAULT_USER = 'admin'
+DEFAULT_PASS = 'hunter2'
 DEFAULT_SITE = 'abcdwxyz'
+DEFAULT_MAC  = 'aa:bb:cc:dd:ee:ff'
 
 class Unifi:
     def __init__(self, host, username, password):
@@ -91,10 +92,17 @@ if __name__ == '__main__':
 
     SITE = args.site.lower() if args.site else DEFAULT_SITE
     MAC = args.mac.lower() if args.mac else DEFAULT_MAC
+    HOST = os.getenv('UNIFI_HOST', DEFAULT_HOST)
+    USER = os.getenv('UNIFI_USER', DEFAULT_PASS)
+    PASS = os.getenv('UNIFI_PASS', DEFAULT_PASS)
 
     sess = Unifi(host=HOST, username=USER, password=PASS)
-    if not sess.login():
-        exit(2)
+    try:
+        if not sess.login():
+            exit(2)
+    except Exception as e:
+        print(e, file=sys.stderr)
+        exit(1)
 
     res = sess.request(f'/api/s/{SITE}/stat/device/{MAC}', method='get')
     if not validate_response(res):
