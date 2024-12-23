@@ -39,6 +39,23 @@ These can be overridden using arguments `--mac/-m` or `--site/-s`.
 - `DEFAULT_MAC` = MAC address of the default plug you want to control
 - `DEFAULT_SITE` = The site ID where your USP-Plug resides (you will see this if you navigate to your Unifi controller, it is the part after the `/manage/` in the URL)
 
+### Example Helper Script
+
+Here's a small helper script example for storing credentials and vars in a separate file:
+
+```
+#!/bin/sh
+
+export UNIFI_HOST=unifi.mycorp.net:8443
+export UNIFI_USER=admin
+export UNIFI_PASS=supersecret123
+
+/usr/local/bin/usp_power.py \
+  --mac fc:ec:da:a3:54:2b \
+  --site ioj7qtxy \
+  "$@"
+```
+
 ### Can this program do _xyz_ ?
 
 I wrote this to scratch my own itch. I've tested it fairly extensively on my own setup, but YMMV. I am running UNA version 9.0.106 as of this writing. Bugreports or PRs to add features welcome!
