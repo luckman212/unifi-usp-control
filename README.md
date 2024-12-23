@@ -1,4 +1,4 @@
-<img src=usp-plug.png width=256>
+<img src=usp-plug.png width=200>
 
 ## unifi-usp-control
 
@@ -35,7 +35,7 @@ options:
 - `DEFAULT_SITE` = The site ID where your USP-Plug resides (you will see this if you navigate to your Unifi controller, it is the part after the `/manage/` in the URL)
 ```
 
-### Can this program do ___ ?
+### Can this program do _xyz_ ?
 
 I wrote this to scratch my own itch. I've tested it fairly extensively on my own setup, but YMMV. I am running UNA version 9.0.106 as of this writing. Bugreports or PRs to add features welcome!
 
