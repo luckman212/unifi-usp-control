@@ -93,7 +93,7 @@ if __name__ == '__main__':
     SITE = args.site.lower() if args.site else DEFAULT_SITE
     MAC = args.mac.lower() if args.mac else DEFAULT_MAC
     HOST = os.getenv('UNIFI_HOST', DEFAULT_HOST)
-    USER = os.getenv('UNIFI_USER', DEFAULT_PASS)
+    USER = os.getenv('UNIFI_USER', DEFAULT_USER)
     PASS = os.getenv('UNIFI_PASS', DEFAULT_PASS)
 
     sess = Unifi(host=HOST, username=USER, password=PASS)
