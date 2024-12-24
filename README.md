@@ -60,5 +60,9 @@ export UNIFI_PASS=supersecret123
 
 I wrote this to scratch my own itch. I've tested it fairly extensively on my own setup, but YMMV. I am running UNA version 9.0.106 as of this writing. Bugreports or PRs to add features welcome!
 
+### See Also
+
+- [luckman212/unifi-stp-prio](https://github.com/luckman212/unifi-stp-prio/) - CLI program to show STP detail of Unifi switches
+
 
 [1]: https://store.ui.com/us/en/products/unifi-smart-power
